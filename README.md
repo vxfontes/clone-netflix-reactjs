@@ -24,6 +24,10 @@
 	🚧  Clone Netflix Using Reactjs 🚀 Under construction...  🚧
 </h4> 
 
+<!--
+- utilização de components
+- usando bootstrap html
+
 <!--hr> 
 
 <p align="center">
