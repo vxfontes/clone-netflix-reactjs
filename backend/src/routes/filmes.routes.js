@@ -2,13 +2,23 @@ const express = require('express');
 const router = express.Router();
 const Filme = require('../models/filme');
 
-router.get('/', (req, res) => {
-    res.json({ mensagem: "todos os registros" });
+router.get('/', async (req, res) => {
+    try {
+        const filmes = await Filme.find({});
+        res.json({ error: false, filmes });
+    } catch (err) {
+        res.json({ error: true, message: err.message });
+    }
 });
 
-router.get('/:id', (req, res) => {
-    const id = req.params.id;
-    res.json({ mensagem: `pegar somente registro com id: ${id}` })
+router.get('/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const filme = await Filme.findById(id);
+        res.json({ error: false, filme });
+    } catch (err) {
+        res.json({ error: true, message: err.message });
+    }
 });
 
 //criar registro
@@ -23,14 +33,26 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.put('/:id', (req, res) => {
-    const id = req.params.id;
-    res.json({ mensagem: `atualizar somente registro com id: ${id}` });
+router.put('/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const novoFilme = req.body;
+
+        const filme = await Filme.findByIdAndUpdate(id,novoFilme);
+        res.json({ error: false, filme });
+    } catch (err) {
+        res.json({ error: true, message: err.message });
+    }
 });
 
-router.delete('/:id', (req, res) => {
-    const id = req.params.id;
-    res.json({ mensagem: `deletar somente registro com id: ${id}` });
-});
+router.delete('/:id', async (req, res) => {
+    try {
+      const id = req.params.id;
+      await Filme.findByIdAndDelete(id);
+      res.json({ error: false });
+    } catch (err) {
+      res.json({ error: true, message: err.message });
+    }
+  });
 
 module.exports = router;
