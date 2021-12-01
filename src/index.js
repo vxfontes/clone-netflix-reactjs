@@ -3,19 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './styles/app.css';
 import reportWebVitals from './reportWebVitals';
-import HomeExemplo from './archive/exemplo-filmes';
-
-
-import Home from "./pages/home";
+import Rotas from './routes';
 import Login from './pages/login';
+import Home from './pages/home';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
-    {/* <Login /> */}
 
-    {/* exemplo anterior de como funciona o basico do react na aula
-    <HomeExemplo /> */}
+    {/* <Rotas/> */}
+    <Login/>
+    {/* <Home/> */}
 
   </React.StrictMode>,
   document.getElementById('root')

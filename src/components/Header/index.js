@@ -3,13 +3,13 @@ import React from "react";
 //img
 import logo from "../../assets/logo.png";
 
-const Header = () => {
+const Header = ({hideMenu}) => {
     return (
         <header className="row">
             <div className="col-2">
                 <img src={logo} />
             </div>
-            <div className="col-8">
+            {!hideMenu && (<div className="col-8">
                 <ul className="menu_list">
                     <li>
                         <a href="#">Início</a>
@@ -27,7 +27,7 @@ const Header = () => {
                         <a href="#">Minha lista</a>
                     </li>
                 </ul>
-            </div>
+            </div>)}
         </header>
     );
 }

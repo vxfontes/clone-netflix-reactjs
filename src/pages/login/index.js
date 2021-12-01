@@ -11,7 +11,7 @@ const Login = () => {
             height: '100%',
         }}>
                 {/* <img src={logo} alt="logo netflix"/> */}
-            <Header/>
+            <Header hideMenu={true} />
             <div id="caixa_login" className="col-4 offset-4">
                 <h1 className="text-white">Entrar</h1>
                 <br />
