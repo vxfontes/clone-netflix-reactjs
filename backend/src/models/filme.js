@@ -7,10 +7,14 @@ const Filme = mongoose.model('Filme', {
         //adição obrigatoria
         required: true,
     },
-    atores: Array,
     ano: Number,
-    detalhes: Object,
-    premiacoes: [Object],
+    tipo: String,
+    capa: String,
+    logo: String,
+    descricao: String,
+    elenco: Array,
+    generos: Array,
+    cenas_momentos: Array,
     url: String,
 });
 
