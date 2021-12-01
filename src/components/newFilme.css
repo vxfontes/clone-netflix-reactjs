@@ -1,0 +1,5 @@
+.alignEnd {
+    align-items: flex-end;
+    text-align: end;
+    justify-content: end;
+}
