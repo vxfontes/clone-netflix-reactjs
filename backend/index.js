@@ -1,36 +1,24 @@
 const express = require('express');
-const app = express();
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
+//manipular o mongo com javascript
+const mongoose = require('mongoose');
 
-// rotas provisorias
-app.get('/', (req, res) => {
-    res.json({mensagem: "todos os registros"});
-});
+const app = express();
 
-app.get('/:id', (req, res) => {
-    const id = req.params.id;
-    res.json({mensagem: `pegar somente registro com id: ${id}`})
-});
+const routes = require('./src/routes/filmes.routes');
+mongoose.connect('mongodb://localhost:27017/netflix');
 
-//criar registro
-app.post('/', (req, res) => {
-    const body = req.body;
-    res.json(body);
-});
+//utilizações
+app.use(bodyParser.json())
+app.use(morgan('dev'));
 
-app.put('/:id', (req, res) => {
-    const id = req.params.id;
-    res.json({mensagem: `atualizar somente registro com id: ${id}`});
-});
 
-app.delete('/:id', (req, res) => {
-    const id = req.params.id;
-    res.json({mensagem: `deletar somente registro com id: ${id}`});
-});
+// prefixo de todas as rotas
+app.use('/', routes);
 
 
 //////////////////////////////////////////////////////////
-app.use(morgan('dev'));
 app.listen(8080, () => {
     console.log('Servidor online');
 });
