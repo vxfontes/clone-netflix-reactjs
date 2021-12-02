@@ -12,7 +12,7 @@ const ModalSeries = () => {
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-hero">
-                        <img src={capadiabo} />
+                        <img src={capadiabo} alt="capa da serie" />
                         <div className="col-12 modal-hero-infos">
                             <button className="btn btn-lg btn-custom-white">
                                 <span className="mdi mdi-play"></span> Assistir

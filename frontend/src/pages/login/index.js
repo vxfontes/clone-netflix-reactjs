@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from '../../assets/logo.png';
 import Header from "../../components/Header";
 import api from '../../services/api';
 
@@ -13,22 +12,26 @@ const Login = () => {
 
     const login = async () => {
         try {
+            console.log("entrei no try ")
             const response = await api.post('/usuario/login', credenciais);
             const res = response.data;
 
             if (res.error) {
+                console.log("entrei no if do erro ")
                 alert(res.message);
                 return false;
             }
 
             // guardar usuario no browser
             localStorage.setItem('@user', JSON.stringify(res.usuario));
-
+            console.log("armazenei usuario")
             // redirecionar o usuario
             alert("Você foi logado");
             window.location.reload();
+            console.log("dei reload")
 
         } catch (err) {
+            console.log("to no catch")
             alert(err.message);
         }
     }
