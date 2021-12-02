@@ -42,6 +42,10 @@ body {
     padding: 5px 9px !important;
   }
   
+  .btn + .btn {
+    margin-left: 8px;
+  }
+
   .opacity-50 {
     opacity: 0.5;
   }
@@ -212,7 +216,6 @@ body {
   
   .modal-hero {
     height: 300px;
-    background-image: url(../assets/capa-filme.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -263,21 +266,21 @@ body {
     color: #fff;
   }
   
-  #lista_episodeos {
+  #lista_episodios {
     list-style: none;
     padding: 0;
   }
   
-  #lista_episodeos li:hover {
+  #lista_episodios li:hover {
     cursor: pointer;
     background: rgba(255, 255, 255, 0.05);
   }
   
-  #lista_episodeos li {
+  #lista_episodios li {
     padding: 20px;
   }
   
-  #lista_episodeos li p {
+  #lista_episodios li p {
     font-size: 13px;
   }
   

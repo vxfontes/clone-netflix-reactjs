@@ -1,9 +1,18 @@
 import React from "react";
 
-const Filme = ({filme}) => {
+const Filme = ({ filme }) => {
+
+    const selectFilme = () => {
+        const event = new CustomEvent('selectFilme', {
+            detail: filme,
+        });
+
+        window.dispatchEvent(event);
+    }
+
     return (
-        <li className="filme" data-toggle="modal" data-target="#modal-filme">
-            <img className="img-fluid" src={filme.thumb} alt="capa principal"/>
+        <li className="filme" data-toggle="modal" data-target="#modal-filme" onClick={selectFilme}>
+            <img className="img-fluid" src={filme.thumb} alt="capa principal" />
             <div className="filme_info">
                 <div className="col-12">
                     <a href="#" className="btn-custom-round btn btn-light rounded-circle">
