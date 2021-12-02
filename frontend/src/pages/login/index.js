@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from '../../assets/logo.png';
 import Header from "../../components/Header";
+import api from '../../services/api';
+
 
 const Login = () => {
 
+    const [credenciais, setCredencias] = useState({
+        email: '',
+        senha: ''
+    });
+
+    const login = async () => {
+        try {
+            const response = await api.post('/usuario/login', credenciais);
+            const res = response.data;
+
+            if (res.error) {
+                alert(res.message);
+                return false;
+            }
+
+            // guardar usuario no browser
+            localStorage.setItem('@user', JSON.stringify(res.usuario));
+
+            // redirecionar o usuario
+            alert("Você foi logado");
+            window.location.reload();
+
+        } catch (err) {
+            alert(err.message);
+        }
+    }
 
     return (
         <div className="container-fluid bg_filmes" style={{
@@ -16,11 +44,21 @@ const Login = () => {
                 <h1 className="text-white">Entrar</h1>
                 <br />
                 <form>
-                    <input type="email" className="form-control form-control-lg" placeholder="Email ou número de telefone" />
+                    <input type="email" className="form-control form-control-lg" placeholder="Email ou número de telefone" onChange={(e) => {
+                        setCredencias({
+                            ...credenciais,
+                            email: e.target.value,
+                        })
+                    }}/>
                     <br />
-                    <input type="password" className="form-control form-control-lg" placeholder="Senha" />
+                    <input type="password" className="form-control form-control-lg" placeholder="Senha" onChange={(e) => {
+                        setCredencias({
+                            ...credenciais,
+                            senha: e.target.value,
+                        })
+                    }}/>
                     <br />
-                    <button className="btn btn-lg btn-block btn-danger">Entrar</button>
+                    <button className="btn btn-lg btn-block btn-danger" onClick={login}>Entrar</button>
                     <div className="row mt-4">
                         <div className="col text-muted">
                             <input type="checkbox" /> Lembrar de mim.

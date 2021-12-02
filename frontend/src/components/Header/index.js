@@ -1,9 +1,20 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 
 //img
 import logo from "../../assets/logo.png";
 
-const Header = ({hideMenu}) => {
+const Header = ({ hideMenu }) => {
+    const [user, setUser] = useState({});
+
+    const logout = () => {
+        localStorage.clear();
+        window.location.reload();
+    };
+
+    useEffect(() => {
+        setUser(JSON.parse(localStorage.getItem('@user')));
+    }, []);
+
     return (
         <header className="row">
             <div className="col-2">
@@ -28,6 +39,9 @@ const Header = ({hideMenu}) => {
                     </li>
                 </ul>
             </div>)}
+            <div className="col-2 text-right">
+                <a className="text-white" onClick={logout}>Olá, {user?.nome}. Sair?</a>
+            </div>
         </header>
     );
 }

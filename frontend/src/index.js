@@ -2,18 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './styles/app.css';
-import Rotas from './routes';
-import Login from './pages/login';
-import Home from './pages/home';
+import Routes from './routes';
 
 
 ReactDOM.render(
   <React.StrictMode>
-
-    {/* <Rotas/> */}
-    {/* <Login/> */}
-    <Home/>
-
+    <Routes/>
   </React.StrictMode>,
   document.getElementById('root')
 );
