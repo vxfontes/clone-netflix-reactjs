@@ -143,7 +143,7 @@ $ node addTemporadasEpisodios.js
 ```
 
 
-Made with :heart: by <a href="https://github.com/vxfontes" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/vxfontes" target="_blank">Vanessa Fontes</a>
 
 &#xa0;
 
