@@ -1,12 +1,9 @@
 import React from "react";
 
-//img
-import image from "../../assets/filmes/100.jpg";
-
-const Filme = () => {
+const Filme = ({filme}) => {
     return (
         <li className="filme" data-toggle="modal" data-target="#modal-filme">
-            <img className="img-fluid" src={image} alt="capa principal"/>
+            <img className="img-fluid" src={filme.thumb} alt="capa principal"/>
             <div className="filme_info">
                 <div className="col-12">
                     <a href="#" className="btn-custom-round btn btn-light rounded-circle">

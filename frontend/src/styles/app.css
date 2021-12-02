@@ -78,7 +78,6 @@ body {
   
   #hero {
     height: 700px;
-    background-image: url(../assets/capa-filme.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -11,6 +11,7 @@ const Filme = mongoose.model('Filme', {
     tipo: String,
     capa: String,
     logo: String,
+    thumb: String,
     descricao: String,
     elenco: Array,
     generos: Array,

@@ -20,7 +20,7 @@ const addTemporadasEpisodeos = async () => {
                     titulo: `Temporada ${i}`,
                 }).save();
 
-                const numEpisodios = Math.floor(Math.random() * 15) + 1;
+                const numEpisodios = Math.floor(Math.random() * 20) + 1;
                 for (let x = 1; x <= numEpisodios; x++) {
 
                     console.log(`Inserindo episódios ${x} de ${numEpisodios}`);

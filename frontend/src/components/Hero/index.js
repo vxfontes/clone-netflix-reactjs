@@ -1,23 +1,19 @@
 import React from "react";
-
-//img
-import tituloprincipal from "../../assets/diabo-de-cada-dia.png";
 import top10 from "../../assets/badge-top-10.png"
 
-const Hero = () => {
+const Hero = ({ filme }) => {
     return (
-        <div id="hero" className="container-fluid">
+        <div id="hero" className="container-fluid" style={{
+            backgroundImage:`url(${filme.capa})`
+        }}>
             <div className="container">
                 <div className="row" id="hero_infos">
                     <div className="col-6">
-                        <img className="logo" src={tituloprincipal} alt="titulo principal" />
+                        <img className="logo" src={filme.logo} alt="titulo principal" />
                         <h1 className="text-white">
                             <img src={top10} alt="top 10 simbolo"/> Top 1 de hoje no Brasil.
                         </h1>
-                        <p className="text-white">
-                            Pregadores Profanos. Autoridades Corruptas. Amantes Assassinos.
-                            Numa cidade cheia de pecadores, um jovem busca justiça.
-                        </p>
+                        <p className="text-white">{filme.descricao?.substr(0, 200)}...</p>
                         <br />
                         <button className="btn btn-lg btn-custom-white">
                             <span className="mdi mdi-play"></span> Assistir

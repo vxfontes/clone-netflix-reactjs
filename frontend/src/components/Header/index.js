@@ -39,9 +39,9 @@ const Header = ({ hideMenu }) => {
                     </li>
                 </ul>
             </div>)}
-            <div className="col-2 text-right">
+            {!hideMenu && (<div className="col-2 text-right">
                 <a className="text-white" onClick={logout}>Olá, {user?.nome}. Sair?</a>
-            </div>
+            </div>)}
         </header>
     );
 }
