@@ -3,7 +3,7 @@
 
   &#xa0;
 
-  <!-- <a href="https://clonenetflixreactjs.netlify.app">Demo</a> 
+  <a href="https://clonenetflixreactjs.netlify.app">Demo</a> 
 </div>
 
 <h1 align="center">Clone Netflix Reactjs</h1>
@@ -16,13 +16,7 @@
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/vxfontes/clone-netflix-reactjs?color=56BEB8">
 
   <img alt="License" src="https://img.shields.io/github/license/vxfontes/clone-netflix-reactjs?color=56BEB8">
-</p>
-
-<!-- Status -->
-
-<h4 align="center"> 
-	🚧  Clone Netflix Using Reactjs 🚀 Under construction...  🚧
-</h4> 
+</p> -->
 
 <!--
 - utilização de components
