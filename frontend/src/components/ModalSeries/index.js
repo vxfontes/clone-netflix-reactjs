@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import api from '../../services/api';
-
-//img
 import Episodio from "../Episodio";
 
 
