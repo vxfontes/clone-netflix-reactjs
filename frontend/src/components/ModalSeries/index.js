@@ -6,8 +6,6 @@ import Episodio from "../Episodio";
 
 
 const ModalSeries = () => {
-
-
     // quando clicamos para ver os episodios de uma serie
     return (
         <div className="modal fade" id="modal-filme">
@@ -68,6 +66,9 @@ const ModalSeries = () => {
                             <br />
                             <div className="row">
                                 <ul id="lista_episodeos">
+                                    <Episodio/>
+                                    <Episodio/>
+                                    <Episodio/>
                                     <Episodio/>
                                 </ul>
                             </div>

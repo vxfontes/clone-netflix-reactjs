@@ -7,7 +7,7 @@ const Filme = mongoose.model('Filme', {
         //adição obrigatoria
         required: true,
     },
-    ano: Number,
+    // ano: Number,
     tipo: String,
     capa: String,
     logo: String,
@@ -15,7 +15,7 @@ const Filme = mongoose.model('Filme', {
     elenco: Array,
     generos: Array,
     cenas_momentos: Array,
-    url: String,
+    // url: String,
 });
 
 module.exports = Filme;

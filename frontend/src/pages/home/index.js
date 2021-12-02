@@ -11,13 +11,10 @@ const Home = () => {
     return (
         <>
             <ModalSeries/>
-
             <div className="container-fluid">
                 <Header/>
             </div>
-
             <Hero/>
-
             <div id="main-content">
                 <Sessao/>
                 <Sessao/>
