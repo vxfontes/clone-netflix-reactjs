@@ -5,10 +5,10 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const database = require('./src/services/database');
-const filmeRoutes = require('./src/routes/filmes.routes');
-const usuarioRoutes = require('./src/routes/usuarios.routes');
-const episodiosRoutes = require('./src/routes/episodios.routes');
+const database = require('./services/database');
+const filmeRoutes = require('./routes/filmes.routes');
+const usuarioRoutes = require('./routes/usuarios.routes');
+const episodiosRoutes = require('./routes/episodios.routes');
 
 //middlewares
 app.use(bodyParser.json())
